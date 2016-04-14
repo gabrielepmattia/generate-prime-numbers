@@ -8,8 +8,8 @@ unsigned long generatePrime(int n);
 double getNanoTime();
 unsigned long fromArrayToInt(char* array, int n);
 
-int main(int argc, char* argv){
-	unsigned long prime = generatePrime(10);
+int main(int argc, char** argv){
+	unsigned long prime = generatePrime(11);
 	printf("\n\nThe prime number is %lu\n\n", prime);
 	//double time = getNanoTime();
 	//printf("nanoseconds::%09ld", time);
