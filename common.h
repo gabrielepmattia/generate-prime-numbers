@@ -1,1 +1,1 @@
-typedef LongNumber long double;
+typedef long double LongNumber;

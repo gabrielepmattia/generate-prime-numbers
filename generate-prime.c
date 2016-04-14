@@ -10,11 +10,21 @@ double getNanoTime();
 LongNumber fromArrayToInt(char* array, int n);
 
 int main(int argc, char** argv){
-	printf("unsigned long is %d", sizeof(long double));
-	unsigned long prime = generatePrime(30);
-	printf("\n\nThe prime number is %lu\n\n", prime);
-	//double time = getNanoTime();
-	//printf("nanoseconds::%09ld", time);
+	if(argc < 2) { 
+			printf("Usage generate-prime <bit number>\n");
+			return 0;
+	}
+	int bits = atoi(argv[1]);
+
+	printf("#######################################################\n");
+	printf("# PRIME NUMBER GENERATOR                              #\n");
+	printf("#######################################################\n");
+	printf("# This tool will generate a prime number of %3d bits  #\n", bits);
+	printf("# In this machine the size of LongNumber is %3d bytes #\n", sizeof(LongNumber));
+	printf("#                                                     #\n");
+	unsigned long prime = generatePrime(bits);
+	printf("# The prime number is %lu\n", prime);
+	printf("#######################################################\n");
 }
 
 LongNumber generatePrime(int n){
