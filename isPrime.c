@@ -1,5 +1,5 @@
 #include "isPrime.h"
-
+//comment
 LongNumber isPrime(unsigned long n){
 	if(n == 2 || n == 3){
 		return 1;
