@@ -3,19 +3,21 @@
 #include <time.h>
 #include <math.h>
 #include "isPrime.h"
+#include "common.h"
 
-unsigned long generatePrime(int n);
+LongNumber generatePrime(int n);
 double getNanoTime();
-unsigned long fromArrayToInt(char* array, int n);
+LongNumber fromArrayToInt(char* array, int n);
 
 int main(int argc, char** argv){
-	unsigned long prime = generatePrime(11);
+	printf("unsigned long is %d", sizeof(long double));
+	unsigned long prime = generatePrime(30);
 	printf("\n\nThe prime number is %lu\n\n", prime);
 	//double time = getNanoTime();
 	//printf("nanoseconds::%09ld", time);
 }
 
-unsigned long generatePrime(int n){
+LongNumber generatePrime(int n){
 	char* rand_number_array = (char*)malloc(n*sizeof(char));
 	unsigned long prime_test;
 	do {
@@ -34,7 +36,7 @@ unsigned long generatePrime(int n){
 	return prime_test; 
 }
 
-unsigned long fromArrayToInt(char* array, int n){
+LongNumber fromArrayToInt(char* array, int n){
 	unsigned long number = 0;
 	int i = 0;
 	for(i = n - 1; i >= 0; i--){

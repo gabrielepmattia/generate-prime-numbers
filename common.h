@@ -1,0 +1,1 @@
+typedef LongNumber long double;
