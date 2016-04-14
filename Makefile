@@ -1,18 +1,26 @@
-CC = gcc
-CFLAGS = -O2
-LIBS = -lm
+CC := gcc
+CFLAGS := -O2
+LIBS := -lm
+OBJ_DIR := obj
+BIN_DIR := bin
 
-default: generate-prime
+default: generate-dirs generate-prime
 
-isPrime.o: isPrime.c isPrime.h
-	$(CC) $(CFLAGS) $(LIBS) -c isPrime.c
+generate-dirs:
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(BIN_DIR)
 
-generate-prime.o: generate-prime.c
-	$(CC) $(CFLAGS) $(LIBS) -c generate-prime.c
+$(OBJ_DIR)/isPrime.o: isPrime.c isPrime.h
+	$(CC) $(CFLAGS) $(LIBS) -c isPrime.c -o ./$(OBJ_DIR)/isPrime.o
 
-generate-prime: generate-prime.o isPrime.o
-	$(CC) $(CFLAGS) $(LIBS) generate-prime.o isPrime.o -o generate-prime
+$(OBJ_DIR)/generate-prime.o: generate-prime.c
+	$(CC) $(CFLAGS) $(LIBS) -c generate-prime.c -o ./$(OBJ_DIR)/generate-prime.o
+
+generate-prime: $(OBJ_DIR)/generate-prime.o $(OBJ_DIR)/isPrime.o
+	$(CC) $(CFLAGS) $(LIBS) $(wildcard ./$(OBJ_DIR)/*.o) -o $(BIN_DIR)/generate-prime
 
 clean:
-	rm generate-prime
-	rm *.o
+	rm -f generate-prime
+	rm -f *.o
+	rm -rf bin/
+	rm -rf obj/
