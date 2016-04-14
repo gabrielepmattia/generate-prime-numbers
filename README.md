@@ -6,5 +6,5 @@ Just do `make`
 
 ## Usage
 To generate the number
-`generate-prime <n>`
+`./generate-prime <n>`
 where `n` is the bits number
