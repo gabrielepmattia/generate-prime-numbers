@@ -1,6 +1,6 @@
 CC := gcc
 CFLAGS := -O2
-LIBS := -lm
+LIBS := -lm -lpthread
 OBJ_DIR := obj
 BIN_DIR := bin
 

@@ -1,3 +1,3 @@
 #include "common.h"
 
-LongNumber isPrime(unsigned long n);
+int isPrime(LongNumber n);

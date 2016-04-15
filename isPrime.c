@@ -1,6 +1,17 @@
 #include "isPrime.h"
+#include <pthread.h>
 
-LongNumber isPrime(unsigned long n){
+// Global variable will store if divisor was found
+int divisor_found = 0;
+// Global variable will store the number to check
+LongNumber number = 0;
+
+void* divide(void* args){
+}
+
+int isPrime(LongNumber n){
+	number = n;
+
 	if(n == 2 || n == 3){
 		return 1;
 	}

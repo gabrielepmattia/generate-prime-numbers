@@ -16,6 +16,7 @@ int main(int argc, char** argv){
 	}
 	int bits = atoi(argv[1]);
 
+	printf("\n");
 	printf("#######################################################\n");
 	printf("# PRIME NUMBER GENERATOR                              #\n");
 	printf("#######################################################\n");
@@ -25,6 +26,7 @@ int main(int argc, char** argv){
 	unsigned long prime = generatePrime(bits);
 	printf("# The prime number is %lu\n", prime);
 	printf("#######################################################\n");
+	printf("\n");
 }
 
 LongNumber generatePrime(int n){
