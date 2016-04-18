@@ -5,26 +5,30 @@
  */
 package utils;
 
+import java.math.BigInteger;
+
 /**
  *
  * @author alex
  */
 public class isPrime {
 
-    public static boolean isPrime(long n){
-        if (n == 2 || n == 3) {
+    public static boolean isPrime(BigInteger n){
+        
+        
+        if (n.equals(BigInteger.valueOf(2)) || n.equals(BigInteger.valueOf(3))) {
             return true;
         }
 
-        if (n % 2 == 0 || n % 3 == 0) {
+        if (n.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO) || n.mod(BigInteger.valueOf(3)).equals(BigInteger.ZERO)) {
             return false;
         }
 
         int i = 5;
         int w = 2;
-
-        while (i * i <= n) {
-            if (n % i == 0) {
+        
+        while ( BigInteger.valueOf(i*i).compareTo(n) <= 0 ? true : false) {
+            if (n.mod(BigInteger.valueOf(i)).equals(BigInteger.ZERO)) {
                 return false;
             }
 
